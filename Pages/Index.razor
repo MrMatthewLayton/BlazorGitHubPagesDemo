@@ -2,8 +2,18 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Greetings!</h1>
+<p>@Directory.GetCurrentDirectory()</p>
+<div>
+    @foreach (string drive in Directory.GetLogicalDrives())
+    {
+        <p>@drive</p>
+    }
+</div>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div>
+    @foreach (string directory in Directory.GetDirectories(Directory.GetCurrentDirectory()))
+    {
+        <p>@directory</p>
+    }
+</div>
